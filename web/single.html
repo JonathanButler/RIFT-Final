@@ -1,0 +1,256 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>RIFT SHOP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/form.css" rel="stylesheet" type="text/css" media="all" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            $(".dropdown img.flag").addClass("flagvisibility");
+
+            $(".dropdown dt a").click(function() {
+                $(".dropdown dd ul").toggle();
+            });
+                        
+            $(".dropdown dd ul li a").click(function() {
+                var text = $(this).html();
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+                $("#result").html("Selected value is: " + getSelectedValue("sample"));
+            });
+                        
+            function getSelectedValue(id) {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+
+
+            $("#flagSwitcher").click(function() {
+                $(".dropdown img.flag").toggleClass("flagvisibility");
+            });
+        });
+     </script>
+<!-- start menu -->     
+<link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/megamenu.js"></script>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+<!-- end menu -->
+<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+		<script type="text/javascript" id="sourcecode">
+			$(function()
+			{
+				$('.scroll-pane').jScrollPane();
+			});
+		</script>
+<!----details-product-slider--->
+				<!-- Include the Etalage files -->
+					<link rel="stylesheet" href="css/etalage.css">
+					<script src="js/jquery.etalage.min.js"></script>
+				<!-- Include the Etalage files -->
+				<script>
+						jQuery(document).ready(function($){
+			
+							$('#etalage').etalage({
+								thumb_image_width: 300,
+								thumb_image_height: 400,
+								
+								show_hint: true,
+								click_callback: function(image_anchor, instance_id){
+									alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
+								}
+							});
+							// This is for the dropdown list example:
+							$('.dropdownlist').change(function(){
+								etalage_show( $(this).find('option:selected').attr('class') );
+							});
+
+					});
+				</script>
+				<!----//details-product-slider--->	
+<!-- top scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+   <script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+	</script>					
+</head>
+<body>
+  <div class="header-top">
+	 <div class="wrap"> 
+		<div class="logo">
+			<a href="index.html"><img src="images/logo.png" alt=""/></a>
+	    </div>
+	    <div class="cssmenu">
+		   <ul>
+			 <li class="active"><a href="register.html">Sign up & Save</a></li> 
+			 <li><a href="shop.html">Online Store</a></li> 
+			 <li><a href="login.html">My Account</a></li> 
+			 <li><a href="checkout.html">CheckOut</a></li> 
+		   </ul>
+		</div>
+
+		<div class="clear"></div>
+ 	</div>
+   </div>
+   <div class="header-bottom">
+   		<div class="wrap">
+   		<!-- start header menu -->
+					<div class="col_1_of_middle span_1_of_middle">
+						
+						<ul class="megamenu skyblue">
+						    <li><a class="color1" href="index.html">Home</a></li>
+							<li class="grid"><a class="color2" href="shop.html">Men</a></li>
+				  			<li class="active grid"><a class="color4" href="shop.html">Women</a></li>				
+						</ul>
+
+	   				</div>
+	   				<div class="col_1_of_middle span_1_of_middle">
+						<ul class="f_list1">
+							<li>
+								<!--<span class="m_8">Welcome to RIFT Online Store</span> -->
+								<div class="search">	  
+								<input type="text" name="s" class="textbox" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+								<input type="submit" value="Subscribe" id="submit" name="submit">
+								<div id="response"> </div>
+				 			</div><div class="clear"></div>
+				 		    </li>
+						</ul>
+					</div>
+
+
+
+		   <div class="clear"></div>
+     	</div>
+       </div>
+       <div class="single">
+         <div class="wrap">
+     	    <div class="rsidebar span_1_of_left">
+
+		         
+		        
+		</div>
+		<div class="cont span_2_of_3">
+			  <div class="labout span_1_of_a1">
+				<!-- start product_slider -->
+				     <ul id="etalage">
+							<li>
+								<a href="optionallink.html">
+									<img class="etalage_thumb_image" src="images/t1.jpg" />
+									<img class="etalage_source_image" src="images/t2.jpg" />
+								</a>
+							</li>
+							<li>
+								<img class="etalage_thumb_image" src="images/t2.jpg" />
+								<img class="etalage_source_image" src="images/t2.jpg" />
+							</li>
+							<li>
+								<img class="etalage_thumb_image" src="images/t3.jpg" />
+								<img class="etalage_source_image" src="images/t3.jpg" />
+							</li>
+							<li>
+								<img class="etalage_thumb_image" src="images/t4.jpg" />
+								<img class="etalage_source_image" src="images/t4.jpg" />
+							</li>
+							<li>
+								<img class="etalage_thumb_image" src="images/t5.jpg" />
+								<img class="etalage_source_image" src="images/t5.jpg" />
+							</li>
+							<li>
+								<img class="etalage_thumb_image" src="images/t6.jpg" />
+								<img class="etalage_source_image" src="images/t6.jpg" />
+							</li>
+							<li>
+								<img class="etalage_thumb_image" src="images/t1.jpg" />
+								<img class="etalage_source_image" src="images/t1.jpg" />
+							</li>
+						</ul>
+					
+					
+			<!-- end product_slider -->
+			</div>
+			<div class="cont1 span_2_of_a1">
+				<h3 class="m_3">Lorem ipsum dolor sit amet</h3>
+				
+				<div class="price_single">
+							  <span class="reducedfrom">$66.00</span>
+							  <span class="actual">$12.00</span><a href="#">click for offer</a>
+							</div>
+				<input type="text" name="quantity" value="Quantity" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Quantity';}">
+
+				<div class="btn_form">
+				   <form method="get" action="AddToCart.php">
+					 <input type="submit" value="Add to Cart" name="mycart">
+				  </form>
+				</div>
+				
+    			<p class="m_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    			
+               
+			</div>
+			<div class="clear"></div>
+     
+     
+        
+	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+	 <div class="toogle">
+     	<h3 class="m_3">Product Details</h3>
+     	<p class="m_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+     </div>					
+	 <div class="toogle">
+     	<h3 class="m_3">Product Reviews</h3>
+     	<p class="m_text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+     </div>
+     </div>
+     <div class="clear"></div>
+	 </div>
+     </div>
+
+	    <div class="footer">
+	    	<br>
+	       	 <div class="footer-top">
+	       	 	<div class="copy">
+	       	  		 <div class="wrap">
+	       	   			  <p>© All rights reserved | RIFT </p>
+	     		  	 </div>
+	      	 	</div>
+	    	 </div>
+   		</div>
+
+       <script type="text/javascript">
+			$(document).ready(function() {
+			
+				var defaults = {
+		  			containerID: 'toTop', // fading element id
+					containerHoverID: 'toTopHover', // fading element hover id
+					scrollSpeed: 1200,
+					easingType: 'linear' 
+		 		};
+				
+				
+				$().UItoTop({ easingType: 'easeOutQuart' });
+				
+			});
+		</script>
+        <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+</body>
+</html>
