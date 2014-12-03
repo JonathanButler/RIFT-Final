@@ -155,10 +155,3 @@ alter table Transaction
 add foreign key (eid) references Salesperson(eid);
 SET FOREIGN_KEY_CHECKS=1;
 
-SET FOREIGN_KEY_CHECKS=0;
-alter table Invoice
-add foreign key (tid) references Transaction (tid);
-alter table Invoice
-add foreign key (pid) references Product (pid);
-
-SET FOREIGN_KEY_CHECKS=1;

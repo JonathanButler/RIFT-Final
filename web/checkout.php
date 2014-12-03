@@ -26,7 +26,7 @@ $tid = $tidrow[0]+1;
 $inv = mysql_query("SELECT max(I_id) FROM Invoice");
 $maxinv = mysql_fetch_array($inv);
 $i_id = $maxinv[0]+1;
-
+$warning = false;
 $totalitems = '';
 
 if (!isset($_SESSION["cart_array"]) || count($_SESSION["cart_array"]) < 1) {
@@ -34,6 +34,28 @@ if (!isset($_SESSION["cart_array"]) || count($_SESSION["cart_array"]) < 1) {
 } else {
 	// Start the For Each loop
 	$i = 0; 
+	$baditem;
+	$badnum;
+	foreach ($_SESSION["cart_array"] as $each_item) { 
+		$item_id = $each_item['item_id'];
+		$sql = mysql_query("SELECT * FROM Products WHERE pid='$item_id' LIMIT 1");
+		while ($row = mysql_fetch_array($sql)) {
+			$product_name = $row["name"];
+			$price = $row["price"];
+			$details = $row["type"];
+			$inventory = $row["inventory_amount"];
+		}
+		
+		$quantity = $each_item['quantity'];
+		
+		$sql = mysql_query("SELECT pid, inventory_amount FROM Products WHERE pid='$item_id' ") or die(mysql_error());
+		if ($quantity > $inventory){
+			$warning = True;
+			$baditem = $product_name;
+			$badnum = $inventory;}
+
+    } 
+	if($warning == false){
     foreach ($_SESSION["cart_array"] as $each_item) { 
 		$item_id = $each_item['item_id'];
 		$sql = mysql_query("SELECT * FROM Products WHERE pid='$item_id' LIMIT 1");
@@ -60,7 +82,14 @@ if (!isset($_SESSION["cart_array"]) || count($_SESSION["cart_array"]) < 1) {
 		$i++; 
     } 
 		$sql = mysql_query("INSERT INTO Transaction (tid, date, total_price, total_quantity, email, eid) VALUES('$tid','$todaydate','$cartTotal','$quantity','$email','$eid')") or die(mysql_error());
-
+	}
+	elseif($warning == true){
+		echo 'Sorry, but we do not have enough items to complete your entire order - <a href="cart.php"> adjust your cart</a> and order less of the item ';
+		echo $baditem;
+		echo '. We only have ';
+		echo $badnum;
+		exit();
+	}
 }
 unset($_SESSION["cart_array"]);
 mysql_close();
