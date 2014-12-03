@@ -1,10 +1,5 @@
-
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>RIFT SHOP LOG IN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/php; charset=utf-8" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -17,14 +12,14 @@
             });
                         
             $(".dropdown dd ul li a").click(function() {
-                var text = $(this).html();
-                $(".dropdown dt a span").html(text);
+                var text = $(this).php();
+                $(".dropdown dt a span").php(text);
                 $(".dropdown dd ul").hide();
-                $("#result").html("Selected value is: " + getSelectedValue("sample"));
+                $("#result").php("Selected value is: " + getSelectedValue("sample"));
             });
                         
             function getSelectedValue(id) {
-                return $("#" + id).find("dt a span.value").html();
+                return $("#" + id).find("dt a span.value").php();
             }
 
             $(document).bind('click', function(e) {
@@ -51,7 +46,7 @@
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){		
 				event.preventDefault();
-				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+				$('php,body').animate({scrollTop:$(this.hash).offset().top},1200);
 			});
 		});
 	</script>
@@ -60,15 +55,10 @@
    <div class="header-top">
 	 <div class="wrap"> 
 		<div class="logo">
-			<a href="index.html"><img src="images/logo.png" alt=""/></a>
+			<a href="index.php"><img src="images/logo.png" alt=""/></a>
 	    </div>
 	    <div class="cssmenu">
-		   <ul>
-			 <li class="active"><a href="register.html">Sign up & Save</a></li> 
-			 <li><a href="shop.html">Online Store</a></li> 
-			 <li><a href="login.html">My Account</a></li> 
-			 <li><a href="checkout.html">CheckOut</a></li> 
-		   </ul>
+	
 		</div>
 
 		<div class="clear"></div>
@@ -78,15 +68,14 @@
    		<div class="wrap">
    		<!-- start header menu -->
 					<!--<div class="col_1_of_middle span_1_of_middle">-->
-				
-						<!-- <ul class="megamenu skyblue"> -->
-						  
-						    <input type="button" onclick="window.location.href='CheckHome.php'" class="color1" value="Home Customer Information" name="CheckHC">
-							<input type="button" onclick="window.location.href='CheckBusiness.php'" class="color2" value="Business Customer Information" name="CheckBC">
-				  			<input type="button" onclick="window.location.href='TopProduct.php'" class="color3" value="Top Product" name="topPro">
-				  			<input type="button" class="color4" value="Top Home Customer" name="tophom">
-				  			<input type="button" class="color5" value="Top Business Customer" name="topbus">				
-						  
+						
+						<ul class="megamenu skyblue">
+						    <li><a class="color1" href="CheckHome.php">Home Customer Info</a></li>
+							<li class="grid"><a class="color2" href="CheckBusiness.php">Business Customer Info</a></li>
+				  			<li class="active grid"><a class="color3" href="manageinventory.php">Manage Inventory</a></li>
+				  			<li><a class="color4" href="manageinventory.php#inventoryForm">Add Inventory</a></li>
+				  			<li><a class="color5" href="orders.php">Orders</a></li>							
+						</ul>
 
 	   				<!--</div>
 	   				<div class="col_1_of_middle span_1_of_middle">
@@ -101,47 +90,7 @@
 				 		    </li>
 						</ul>
 					</div>-->
-
-
-
 		   <div class="clear"></div>
      	</div>
        </div>
 
-
-          <div class="wrap">
-				<p><br></p>
-
-				<div class="clear"></div>
-
-			</div>
-
-
-        <div class="footer">
-	       	 <div class="footer-top">
-	       	 	<div class="copy">
-	       	  		 <div class="wrap">
-	       	   			  <p>© All rights reserved | RIFT </p>
-	     		  	 </div>
-	      	 	</div>
-	    	 </div>
-   		</div>
-
-       <script type="text/javascript">
-			$(document).ready(function() {
-			
-				var defaults = {
-		  			containerID: 'toTop', // fading element id
-					containerHoverID: 'toTopHover', // fading element hover id
-					scrollSpeed: 1200,
-					easingType: 'linear' 
-		 		};
-				
-				
-				$().UItoTop({ easingType: 'easeOutQuart' });
-				
-			});
-		</script>
-        <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
-</body>
-</html>

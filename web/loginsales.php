@@ -32,7 +32,7 @@
       $_SESSION["email"] = $email;
       $_SESSION["password"] = $password;
       echo "You are logged in.";
-      echo "Please <a href='SalesCheck.html'> click here to check more information!";
+      echo "Please <a href='SalesCheck.php'> click here to check more information!";
    //    //die("You are logged in. Please <a href='index.html'> click here to begin shopping!<br><br>");
        }
      }
