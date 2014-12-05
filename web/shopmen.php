@@ -77,7 +77,7 @@ elseif (isset($_POST['price'])) {
 else{
 	//This section grabs all the products from the database
 	$product_list = "";
-$sql = mysql_query("SELECT * FROM Products WHERE gender='f' ORDER BY type");
+$sql = mysql_query("SELECT * FROM Products WHERE gender='m' ORDER BY type");
 $productCount = mysql_num_rows($sql); //count the output
 if($productCount > 0){
  while($row=mysql_fetch_array($sql)){
