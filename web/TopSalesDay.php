@@ -13,7 +13,7 @@ $db_server = mysql_connect($db_hostname, $db_username, $db_password);
   $rows = mysql_num_rows($result);
   echo "<br/>Total Profits by Date<hr><br/><table>
   <td width='10%'>Date</td>
-	<td width='15%'>Total</td>";
+	<td width='15%'>Sales</td>";
   
   for($j=0;$j<$rows;++$j){
   	$row = mysql_fetch_row($result);

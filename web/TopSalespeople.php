@@ -1,5 +1,5 @@
 <html>
-<head><title>Top Salespeople</title></head>
+<head><title>Top 25 Salespeople</title></head>
 <?php include_once("riftheader.php");?>
 <?php 
  require_once 'logindb.php';
@@ -14,7 +14,7 @@ $db_server = mysql_connect($db_hostname, $db_username, $db_password);
   echo "<br/>Top 25 Salespeople<hr><br/><table>
   <td width='10%'>Name</td>
 	<td width='5%'>Employee ID</td>
-	<td width='15%'>Sales Dollars</td>";
+	<td width='15%'>Sales</td>";
   for($j=0;$j<$rows;++$j){
   	$row = mysql_fetch_row($result);
   	echo "<tr>";
